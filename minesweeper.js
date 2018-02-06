@@ -2,10 +2,21 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
 var board = {
-  cells: [
-    {row: 0, col: 0},{row: 0, col: 1},
-    {row: 1, col: 0},{row: 1, col: 1}
-  ]
+//  "size": 9, // set size of grid by total number of cells
+  get cells () {
+    let cellArray = [];
+    // generate a 3x3 grid of cells
+    //
+    // repeat inner loop on a next row until board size reached
+    for (let cellRow = 0; cellArray.length < 9; cellRow++) {
+      // iterate new cells accross the row
+      for (let y = 3, cellCol = 0; cellCol < y; cellCol++) {
+        // let cell = {row: cellRow, col: cellCol, isMine: false};
+        cellArray.push({row: cellRow, col: cellCol, isMine: false});
+      }
+    }
+    return cellArray;
+  },
 }
 
 function startGame () {
