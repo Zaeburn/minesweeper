@@ -12,7 +12,7 @@ var board = {
       // iterate new cells accross the row
       for (cellCol = 0; cellCol < Math.sqrt(totalCells); cellCol++) {
         // let cell = {row: cellRow, col: cellCol, isMine: false};
-        cellArray.push({row: cellRow, col: cellCol, isMine: false,});
+        cellArray.push({row: cellRow, col: cellCol, isMine: false, hidden: false});
       }
     }
     return cellArray;
