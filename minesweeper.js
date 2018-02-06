@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
 var board = {
-//  "size": 9, // set size of grid by total number of cells
   get cells () {
     let cellArray = [];
-    // generate a 3x3 grid of cells
+    let totalCells = 36; // set size of grid by total number of cells
+    // generate a X * Y grid of cells
     //
     // repeat inner loop on a next row until board size reached
-    for (let cellRow = 0; cellArray.length < 9; cellRow++) {
+    for (let cellRow = 0; cellArray.length < totalCells; cellRow++) {
       // iterate new cells accross the row
-      for (let y = 3, cellCol = 0; cellCol < y; cellCol++) {
+      for (cellCol = 0; cellCol < Math.sqrt(totalCells); cellCol++) {
         // let cell = {row: cellRow, col: cellCol, isMine: false};
-        cellArray.push({row: cellRow, col: cellCol, isMine: false});
+        cellArray.push({row: cellRow, col: cellCol, isMine: false,});
       }
     }
     return cellArray;
